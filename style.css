@@ -1,0 +1,33 @@
+
+body {
+font-family: Arial, sans-serif;
+}
+
+#invoice-form {
+width: 50%;
+margin: 40px auto;
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#invoice-container {
+width: 50%;
+margin: 40px auto;
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#invoice-container table {
+width: 100%;
+border-collapse: collapse;
+}
+
+#invoice-container table th, #invoice-container table td {
+border: 1px solid #ccc;
+padding: 10px;
+text-align: left;
+}

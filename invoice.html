@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milk Invoice</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div id="invoice-container">
+        <script>
+            const params = new URLSearchParams(window.location.search);
+            const customerName = params.get('customerName');
+            const quantity = params.get('quantity');
+            const pricePerLiter = params.get('pricePerLiter');
+            const subtotal = params.get('subtotal');
+            const total = params.get('total');
+
+            const invoiceHtml = `
+            <center><h4>विक्रेता: श्री कैलाश प्रसाद यादव ।</h4>
+            <h4>क्रेता: श्री दयानंद पंडित ।</h4></center>
+            <table>
+                <tr>
+                    <th>Month/s:</th>
+                    <td>${customerName}</td>
+                </tr>
+                <tr>
+                    <th>Quantity (Liters):</th>
+                    <td>${quantity}</td>
+                </tr>
+                <tr>
+                    <th>Price per Liter (₹):</th>
+                    <td>${pricePerLiter}</td>
+                </tr>
+                <tr>
+                    <th>Total (₹):</th>
+                    <td>${subtotal}</td>
+                </tr>
+                <tr>
+                    <th>Payable Ammount: (₹):</th>
+                    <td>${total}</td>
+                </tr>
+            </table>
+        `;
+
+            document.getElementById('invoice-container').innerHTML = invoiceHtml;
+        </script>
+    </div>
+    <style>
+        center {
+            line-height: 10%;
+        }
+    </style>
+</body>
+
+</html>
