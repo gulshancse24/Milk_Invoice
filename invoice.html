@@ -1,27 +1,26 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Milk Invoice</title>
-    <link rel="stylesheet" href="style.css">
-
+   <link type=stylesheet src=style.css>
 </head>
-
 <body>
-    <div id="invoice-container">
-        <script>
-            const params = new URLSearchParams(window.location.search);
-            const customerName = params.get('customerName');
-            const quantity = params.get('quantity');
-            const pricePerLiter = params.get('pricePerLiter');
-            const subtotal = params.get('subtotal');
-            const total = params.get('total');
+    <div id="invoice-container"></div>
+    <button id="download-pdf">Download PDF</button>
 
-            const invoiceHtml = `
-            <center><h4>विक्रेता: श्री कैलाश प्रसाद यादव ।</h4>
-            <h4>क्रेता: श्री दयानंद पंडित ।</h4></center>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const customerName = params.get('customerName');
+        const quantity = params.get('quantity');
+        const pricePerLiter = params.get('pricePerLiter');
+        const subtotal = params.get('subtotal');
+        const total = params.get('total');
+
+        const invoiceHtml = `
+            <h2>Milk Invoice</h2>
             <table>
                 <tr>
                     <th>Month/s:</th>
@@ -36,24 +35,29 @@
                     <td>${pricePerLiter}</td>
                 </tr>
                 <tr>
-                    <th>Total (₹):</th>
+                    <th>Subtotal (₹):</th>
                     <td>${subtotal}</td>
                 </tr>
                 <tr>
-                    <th>Payable Ammount: (₹):</th>
+                    <th>Total (₹):</th>
                     <td>${total}</td>
                 </tr>
             </table>
         `;
 
-            document.getElementById('invoice-container').innerHTML = invoiceHtml;
-        </script>
-    </div>
-    <style>
-        center {
-            line-height: 10%;
-        }
-    </style>
-</body>
+        document.getElementById('invoice-container').innerHTML = invoiceHtml;
 
+        const downloadPdfButton = document.getElementById('download-pdf');
+        downloadPdfButton.addEventListener('click', () => {
+            const doc = new jsPDF();
+            doc.text('Milk Invoice', 10, 10);
+            doc.text(`Month/s: ${customerName}`, 10, 20);
+            doc.text(`Quantity (Liters): ${quantity}`, 10, 30);
+            doc.text(`Price per Liter (₹): ${pricePerLiter}`, 10, 40);
+            doc.text(`Subtotal (₹): ${subtotal}`, 10, 50);
+            doc.text(`Total (₹): ${total}`, 10, 60);
+            doc.save('invoice.pdf');
+        });
+    </script>
+</body>
 </html>
