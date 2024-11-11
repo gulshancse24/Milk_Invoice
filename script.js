@@ -8,7 +8,7 @@
      const quantity = document.getElementById('quantity').value;
      const pricePerLiter = document.getElementById('price-per-liter').value;
      const total = document.getElementById('payableamt').value;
-     const subtotal = total;
+     const subtotal = quantity * pricePerLiter;
 
      const url = `invoice.html?customerName=${customerName}&quantity=${quantity}&pricePerLiter=${pricePerLiter}&subtotal=${subtotal}&total=${total}`;
      window.open(url, '_blank');
