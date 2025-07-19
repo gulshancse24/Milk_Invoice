@@ -1,28 +1,429 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Milk Invoice Generator</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Happy Birthday Aditya Bhaiya! 🎉</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .dancing-script {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .slide {
+            transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+        }
+        
+        .gradient-bg-1 {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+        }
+        
+        .gradient-bg-2 {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+        
+        .gradient-bg-3 {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+        }
+        
+        .gradient-bg-4 {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+        
+        .gradient-bg-5 {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+        }
+        
+        /* Celebration Animation */
+        .celebration {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ff69b4;
+            animation: celebrate 3s infinite;
+        }
+        
+        @keyframes celebrate {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+        
+        /* Text Animations */
+        .bounce-in {
+            animation: bounceIn 2s ease-out;
+        }
+        
+        .slide-in {
+            animation: slideIn 2s ease-out 1s both;
+        }
+        
+        @keyframes bounceIn {
+            0% { transform: scale(0.3) translateY(-50px); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1) translateY(0); opacity: 1; }
+        }
+        
+        @keyframes slideIn {
+            0% { transform: translateX(-100px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        
+        /* Floating Hearts */
+        .heart {
+            position: absolute;
+            color: #ff69b4;
+            font-size: 20px;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+        
+        /* Photo Gallery Hover Effects */
+        .photo-card {
+            transition: all 0.3s ease;
+        }
+        
+        .photo-card:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+        
+        /* Sparkle Animation */
+        .sparkle {
+            position: absolute;
+            color: #ffd700;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+        
+        /* Birthday Cake Animation */
+        .cake-bounce {
+            animation: cakeBounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes cakeBounce {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
 </head>
+<body class="overflow-hidden">
+    <!-- Celebration Particles -->
+    <div id="celebration-container" class="fixed inset-0 pointer-events-none z-10"></div>
+    
+    <!-- Main Slide Container -->
+    <div class="relative w-full h-screen">
+        <!-- Slide 1: Celebration & Animated Birthday Wishes -->
+        <div id="slide-1" class="slide absolute inset-0 gradient-bg-1 flex items-center justify-center text-pink-800 overflow-hidden">
+            <!-- Floating Hearts -->
+            <div class="heart" style="top: 10%; left: 10%; animation-delay: 0s;">💖</div>
+            <div class="heart" style="top: 20%; right: 15%; animation-delay: 1s;">💕</div>
+            <div class="heart" style="bottom: 30%; left: 20%; animation-delay: 2s;">💗</div>
+            <div class="heart" style="bottom: 20%; right: 10%; animation-delay: 3s;">💝</div>
+            
+            <!-- Sparkles -->
+            <div class="sparkle" style="top: 15%; left: 30%; animation-delay: 0.5s;">✨</div>
+            <div class="sparkle" style="top: 25%; right: 25%; animation-delay: 1.5s;">⭐</div>
+            <div class="sparkle" style="bottom: 35%; left: 40%; animation-delay: 2.5s;">✨</div>
+            
+            <div class="text-center max-w-4xl px-8 relative z-20">
+                <div class="bounce-in">
+                    <h1 class="dancing-script text-8xl font-bold mb-4 text-pink-600">Happy Birthday</h1>
+                </div>
+                <div class="slide-in">
+                    <h2 class="dancing-script text-7xl font-bold text-pink-700 mb-8">Aditya Bhaiya</h2>
+                </div>
+                <div class="text-6xl mb-8 cake-bounce">🎂🎉🎈</div>
+                <p class="text-2xl mb-8 text-pink-600 font-medium">Wishing you the most amazing day filled with happiness and love!</p>
+                <button onclick="nextSlide()" class="bg-pink-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-pink-600 transition-colors shadow-lg">
+                    Let's Celebrate! 🎊
+                </button>
+            </div>
+        </div>
 
-<body>
-    <h1>Milk Invoice Generator</h1>
-    <form id="invoice-form">
-        <label for="month">Month/s:</label>
-        <input type="text" id="month" required><br><br>
-        <label for="quantity">Quantity (Liters):</label>
-        <input type="number" id="quantity" required><br><br>
-        <label for="price-per-liter">Price per Liter (₹):</label>
-        <input type="number" id="price-per-liter" required><br><br>
-        <label for="price-per-liter">How much you Pay (₹):</label>
-        <input type="number" id="payableamt" required><br><br>
-        <button id="generate-invoice">Generate Invoice</button>
-    </form>
+        <!-- Slide 2: Photo Gallery -->
+        <div id="slide-2" class="slide absolute inset-0 gradient-bg-2 flex items-center justify-center text-pink-800 hidden">
+            <div class="text-center max-w-6xl px-8">
+                <h1 class="dancing-script text-6xl font-bold mb-8 text-pink-600">Beautiful Memories 📸</h1>
+                <p class="text-xl mb-8 text-pink-700">Cherishing all the wonderful moments with you, bhaiya!</p>
+                
+                <div class="grid grid-cols-3 gap-6 mb-8">
+                    <!-- Photo placeholders with beautiful frames -->
+                    <div class="photo-card bg-white p-4 rounded-2xl shadow-lg">
+                        <div class="bg-gradient-to-br from-pink-200 to-pink-300 h-48 rounded-xl flex items-center justify-center text-6xl">
+                            📷
+                        </div>
+                        <p class="text-pink-600 font-medium mt-3">Happy Moments</p>
+                    </div>
+                    
+                    <div class="photo-card bg-white p-4 rounded-2xl shadow-lg">
+                        <div class="bg-gradient-to-br from-pink-200 to-pink-300 h-48 rounded-xl flex items-center justify-center text-6xl">
+                            🎈
+                        </div>
+                        <p class="text-pink-600 font-medium mt-3">Celebrations</p>
+                    </div>
+                    
+                    <div class="photo-card bg-white p-4 rounded-2xl shadow-lg">
+                        <div class="bg-gradient-to-br from-pink-200 to-pink-300 h-48 rounded-xl flex items-center justify-center text-6xl">
+                            🎂
+                        </div>
+                        <p class="text-pink-600 font-medium mt-3">Special Days</p>
+                    </div>
+                    
+                    <div class="photo-card bg-white p-4 rounded-2xl shadow-lg">
+                        <div class="bg-gradient-to-br from-pink-200 to-pink-300 h-48 rounded-xl flex items-center justify-center text-6xl">
+                            🎊
+                        </div>
+                        <p class="text-pink-600 font-medium mt-3">Fun Times</p>
+                    </div>
+                    
+                    <div class="photo-card bg-white p-4 rounded-2xl shadow-lg">
+                        <div class="bg-gradient-to-br from-pink-200 to-pink-300 h-48 rounded-xl flex items-center justify-center text-6xl">
+                            🎁
+                        </div>
+                        <p class="text-pink-600 font-medium mt-3">Surprises</p>
+                    </div>
+                    
+                    <div class="photo-card bg-white p-4 rounded-2xl shadow-lg">
+                        <div class="bg-gradient-to-br from-pink-200 to-pink-300 h-48 rounded-xl flex items-center justify-center text-6xl">
+                            💝
+                        </div>
+                        <p class="text-pink-600 font-medium mt-3">Love & Care</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <script src="script.js"></script>
-</body>
+        <!-- Slide 3: Birthday Wishes -->
+        <div id="slide-3" class="slide absolute inset-0 gradient-bg-3 flex items-center justify-center text-pink-800 hidden">
+            <div class="text-center max-w-4xl px-8">
+                <h1 class="dancing-script text-6xl font-bold mb-8 text-pink-600">Heartfelt Wishes 💕</h1>
+                
+                <div class="bg-white bg-opacity-80 p-8 rounded-2xl shadow-xl mb-8">
+                    <div class="text-5xl mb-6">🎂</div>
+                    <p class="text-xl text-pink-700 leading-relaxed italic mb-6">
+                        "Dear Aditya Bhaiya, on your special day, I want you to know how grateful I am to have you in my life. 
+                        Your kindness, wisdom, and caring nature inspire everyone around you. May this new year of your life 
+                        bring you endless joy, success, and all the happiness you deserve!"
+                    </p>
+                    <p class="text-lg font-semibold text-pink-600">With lots of love and best wishes! 💖</p>
+                </div>
+                
+                <div class="text-4xl">🎈🎊🎁🎉🎈</div>
+            </div>
+        </div>
 
+        <!-- Slide 4: Special Message -->
+        <div id="slide-4" class="slide absolute inset-0 gradient-bg-4 flex items-center justify-center text-pink-800 hidden">
+            <div class="text-center max-w-4xl px-8">
+                <h1 class="dancing-script text-6xl font-bold mb-8 text-pink-600">You're Amazing! ⭐</h1>
+                
+                <div class="grid grid-cols-2 gap-8">
+                    <div class="bg-white bg-opacity-80 p-6 rounded-xl shadow-lg">
+                        <div class="text-4xl mb-4">🌟</div>
+                        <h3 class="text-2xl font-semibold text-pink-600 mb-3">Inspiring</h3>
+                        <p class="text-pink-700">Your positive energy lights up every room you enter</p>
+                    </div>
+                    
+                    <div class="bg-white bg-opacity-80 p-6 rounded-xl shadow-lg">
+                        <div class="text-4xl mb-4">💪</div>
+                        <h3 class="text-2xl font-semibold text-pink-600 mb-3">Strong</h3>
+                        <p class="text-pink-700">Your determination and strength motivate us all</p>
+                    </div>
+                    
+                    <div class="bg-white bg-opacity-80 p-6 rounded-xl shadow-lg">
+                        <div class="text-4xl mb-4">❤️</div>
+                        <h3 class="text-2xl font-semibold text-pink-600 mb-3">Caring</h3>
+                        <p class="text-pink-700">Your love and care make everyone feel special</p>
+                    </div>
+                    
+                    <div class="bg-white bg-opacity-80 p-6 rounded-xl shadow-lg">
+                        <div class="text-4xl mb-4">🎯</div>
+                        <h3 class="text-2xl font-semibold text-pink-600 mb-3">Successful</h3>
+                        <p class="text-pink-700">May you achieve all your dreams and goals</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Final Celebration -->
+        <div id="slide-5" class="slide absolute inset-0 gradient-bg-5 flex items-center justify-center text-pink-800 hidden">
+            <div class="text-center max-w-4xl px-8">
+                <div class="text-8xl mb-6 cake-bounce">🎂</div>
+                <h1 class="dancing-script text-7xl font-bold mb-6 text-pink-600">Many Happy Returns!</h1>
+                <p class="text-2xl mb-8 text-pink-700 font-medium">May your birthday be as wonderful as you are, Aditya Bhaiya!</p>
+                
+                <div class="bg-white bg-opacity-80 p-6 rounded-2xl shadow-xl mb-8">
+                    <p class="text-xl text-pink-700 italic">
+                        "Wishing you a year filled with new adventures, beautiful moments, and endless happiness. 
+                        You deserve all the best things in life! Happy Birthday! 🎉"
+                    </p>
+                </div>
+                
+                <div class="text-5xl">🎊🎈🎁💖🎉🎂🎈🎊</div>
+                
+                <button onclick="goToSlide(1)" class="mt-8 bg-pink-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-pink-600 transition-colors shadow-lg">
+                    Celebrate Again! 🎉
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4 z-30">
+            <button onclick="prevSlide()" class="bg-pink-500 bg-opacity-80 text-white p-3 rounded-full hover:bg-opacity-100 transition-all backdrop-blur-sm shadow-lg">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            
+            <div class="flex space-x-2 items-center">
+                <div onclick="goToSlide(1)" class="nav-dot w-4 h-4 bg-pink-500 rounded-full cursor-pointer active shadow-lg"></div>
+                <div onclick="goToSlide(2)" class="nav-dot w-4 h-4 bg-pink-300 rounded-full cursor-pointer shadow-lg"></div>
+                <div onclick="goToSlide(3)" class="nav-dot w-4 h-4 bg-pink-300 rounded-full cursor-pointer shadow-lg"></div>
+                <div onclick="goToSlide(4)" class="nav-dot w-4 h-4 bg-pink-300 rounded-full cursor-pointer shadow-lg"></div>
+                <div onclick="goToSlide(5)" class="nav-dot w-4 h-4 bg-pink-300 rounded-full cursor-pointer shadow-lg"></div>
+            </div>
+            
+            <button onclick="nextSlide()" class="bg-pink-500 bg-opacity-80 text-white p-3 rounded-full hover:bg-opacity-100 transition-all backdrop-blur-sm shadow-lg">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Slide Counter -->
+        <div class="absolute top-8 right-8 bg-pink-500 bg-opacity-80 text-white px-4 py-2 rounded-full backdrop-blur-sm z-30 shadow-lg">
+            <span id="slide-counter">1 / 5</span>
+        </div>
+    </div>
+
+    <!-- Overlay for Special Message -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden backdrop-blur-sm">
+        <div class="bg-white rounded-2xl p-8 max-w-md mx-4 transform transition-all shadow-2xl">
+            <div class="text-center">
+                <div class="text-6xl mb-4">🎂</div>
+                <h2 class="dancing-script text-4xl font-bold text-pink-600 mb-4">Special Birthday Message</h2>
+                <p class="text-gray-700 mb-6 leading-relaxed">
+                    Aditya Bhaiya, you bring so much joy and positivity into our lives. 
+                    Your birthday is the perfect time to celebrate the amazing person you are!
+                </p>
+                <button onclick="hideOverlay()" class="w-full bg-pink-500 text-white py-3 rounded-lg font-semibold hover:bg-pink-600 transition-colors">
+                    Thank You! 💕
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 5;
+
+        // Create celebration particles
+        function createCelebration() {
+            const container = document.getElementById('celebration-container');
+            const colors = ['#ff69b4', '#ffd700', '#ff1493', '#ff6347', '#da70d6'];
+            
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const particle = document.createElement('div');
+                    particle.className = 'celebration';
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    particle.style.animationDelay = Math.random() * 3 + 's';
+                    container.appendChild(particle);
+                    
+                    setTimeout(() => {
+                        particle.remove();
+                    }, 3000);
+                }, i * 100);
+            }
+        }
+
+        function showSlide(slideNumber) {
+            // Hide all slides
+            for (let i = 1; i <= totalSlides; i++) {
+                document.getElementById(`slide-${i}`).classList.add('hidden');
+            }
+            
+            // Show current slide
+            document.getElementById(`slide-${slideNumber}`).classList.remove('hidden');
+            
+            // Update navigation dots
+            document.querySelectorAll('.nav-dot').forEach((dot, index) => {
+                if (index + 1 === slideNumber) {
+                    dot.classList.add('active');
+                    dot.classList.remove('bg-pink-300');
+                    dot.classList.add('bg-pink-500');
+                } else {
+                    dot.classList.remove('active');
+                    dot.classList.add('bg-pink-300');
+                    dot.classList.remove('bg-pink-500');
+                }
+            });
+            
+            // Update counter
+            document.getElementById('slide-counter').textContent = `${slideNumber} / ${totalSlides}`;
+            currentSlide = slideNumber;
+            
+            // Trigger celebration on first and last slide
+            if (slideNumber === 1 || slideNumber === 5) {
+                createCelebration();
+            }
+        }
+
+        function nextSlide() {
+            const next = currentSlide < totalSlides ? currentSlide + 1 : 1;
+            showSlide(next);
+        }
+
+        function prevSlide() {
+            const prev = currentSlide > 1 ? currentSlide - 1 : totalSlides;
+            showSlide(prev);
+        }
+
+        function goToSlide(slideNumber) {
+            showSlide(slideNumber);
+        }
+
+        function showOverlay() {
+            document.getElementById('overlay').classList.remove('hidden');
+        }
+
+        function hideOverlay() {
+            document.getElementById('overlay').classList.add('hidden');
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowRight') {
+                nextSlide();
+            } else if (event.key === 'ArrowLeft') {
+                prevSlide();
+            } else if (event.key === 'Escape') {
+                hideOverlay();
+            }
+        });
+
+        // Initial celebration
+        setTimeout(createCelebration, 1000);
+        
+        // Auto-advance slides every 8 seconds (optional)
+        setInterval(() => {
+            nextSlide();
+        }, 8000);
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'961bd626153da764',t:'MTc1Mjk0NTA3MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
